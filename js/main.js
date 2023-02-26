@@ -1,5 +1,5 @@
 'use strict';
-//definizione e assegnazioni variabili 
+//definizione e assegnazioni variabili input e bottoni 
 const emailInput = document.getElementById('email');
 const checkBtn = document.getElementById('check-btn');
 const resetBtn = document.getElementById('reset-btn');
@@ -8,6 +8,10 @@ const resetBtn = document.getElementById('reset-btn');
 const validMessage = document.getElementById('valid-email');
 const invalidMessage = document.getElementById('invalid-email');
 
+//definizione e assegnazioni variabili gioco dadi
+const userNumber = document.getElementById('user-result');
+const userCpu = document.getElementById('computer-result');
+const playBtn = document.getElementById('play');
 //array email
 const emailVerified = ["giuliatoti@hotmail.it", "test@gmail.com", "boolean@gmail.com", "welovehtml@gmail.com", "welovecss@gmail.com", "welovejs@gmail.com"];
 
@@ -39,3 +43,15 @@ function() {
     invalidMessage.classList.remove('show');
     emailInput.value = "";
 })
+
+
+//inizio del gioco al click
+
+playBtn.addEventListener('click',
+    function () {
+        //alert('hai cliccato');
+        userNumber.innerHTML = Math.floor(Math.random() * 6) + 1;    
+ 
+
+    })
+
