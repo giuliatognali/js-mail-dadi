@@ -10,7 +10,7 @@ const invalidMessage = document.getElementById('invalid-email');
 
 //definizione e assegnazioni variabili gioco dadi
 const userNumber = document.getElementById('user-result');
-const userCpu = document.getElementById('computer-result');
+const cpuNumber = document.getElementById('computer-result');
 const playBtn = document.getElementById('play');
 //array email
 const emailVerified = ["giuliatoti@hotmail.it", "test@gmail.com", "boolean@gmail.com", "welovehtml@gmail.com", "welovecss@gmail.com", "welovejs@gmail.com"];
@@ -50,8 +50,23 @@ function() {
 playBtn.addEventListener('click',
     function () {
         //alert('hai cliccato');
+        
         userNumber.innerHTML = Math.floor(Math.random() * 6) + 1;    
- 
+        cpuNumber.innerHTML = Math.floor(Math.random() * 6) + 1;
+        
+        const userValue = userNumber.innerHTML;
+        const cpuValue = cpuNumber.innerHTML;
 
+        console.log(userValue, cpuValue);
+
+        if (userValue > cpuValue){
+            console.log('hai vinto')
+        }
+        else if(userValue < cpuValue){
+            console.log('hai perso')
+        }
+        else if (userValue === cpuValue){
+            console.log('parità')
+        }
     })
 
