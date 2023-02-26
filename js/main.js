@@ -9,9 +9,15 @@ const validMessage = document.getElementById('valid-email');
 const invalidMessage = document.getElementById('invalid-email');
 
 //definizione e assegnazioni variabili gioco dadi
+const diceGame = document.querySelector('.container-game');
 const userNumber = document.getElementById('user-result');
 const cpuNumber = document.getElementById('computer-result');
 const playBtn = document.getElementById('play');
+
+const winner = document.querySelector('.win');
+const loser = document.querySelector('.lose');
+const draw = document.querySelector('.draw');
+
 //array email
 const emailVerified = ["giuliatoti@hotmail.it", "test@gmail.com", "boolean@gmail.com", "welovehtml@gmail.com", "welovecss@gmail.com", "welovejs@gmail.com"];
 
@@ -26,6 +32,7 @@ checkBtn.addEventListener('click',
 
             if (emailVerified[i] === emailInputValue) {
                 validMessage.classList.add('show');
+                diceGame.classList.add('show');
                 break;
 
                 //inserire da mostrare il div con il gioco
@@ -61,12 +68,21 @@ playBtn.addEventListener('click',
 
         if (userValue > cpuValue){
             console.log('hai vinto')
+            winner.classList.add('show');
+            loser.classList.remove('show');
+            draw.classList.remove('show');
         }
         else if(userValue < cpuValue){
             console.log('hai perso')
+            loser.classList.add('show');
+            winner.classList.remove('show');
+            draw.classList.remove('show');
         }
         else if (userValue === cpuValue){
             console.log('parità')
+            draw.classList.add('show');
+            winner.classList.remove('show');
+            loser.classList.remove('show');
         }
     })
 
