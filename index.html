@@ -6,7 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- /font -->
     <!-- css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- /css -->
@@ -15,33 +20,49 @@
 
 <body>
     <h1>Sfida la fortuna!</h1>
-<div class="main-container flex">
-    <div class="container-mail">
-        <h2>Inserisci la tua email</h2>
-        <h3>Inserisci la tua email per giocare</h3>
+    <div class="main-container flex">
+        <div class="container-mail">
+            <h2>Vuoi giocare a dadi?</h2>
+            <h3>Inserisci la tua email</h3>
 
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email">
-        <button id="check-btn">Verifica</button>
-        <button type="reset" id="reset-btn">Annulla</button>
-        <div class="message" id="valid-email">
-            <h4>La tua mail è valida, prosegui con il gioco</h4>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+            <div class="btn flex">
+                <button id="check-btn">Verifica</button>
+                <button type="reset" id="reset-btn">Annulla</button>
+
+            </div>
+            <div class="message" id="valid-email">
+                <h4>La tua mail è valida, prosegui con il gioco</h4>
+            </div>
+            <div class="message" id="invalid-email">
+                <h4>La tua mail non è valida, riprova</h4>
+            </div>
         </div>
-        <div class="message" id="invalid-email">
-            <h4>La tua mail non è valida, inseriscine un'altra per giocare</h4>
+        <div class="container-game">
+            <h2>Lancia i dadi e prova a vincere</h2>
+            <div class="dice flex">
+                <p id="user-result">?</p>
+                <p id="computer-result">?</p>
+            </div>
+            <button id="play">Gioca</button>
+            <div class="box win">
+                <p>Congratulazioni...</p>
+                <p>HAI VINTO!</p>
+                <p><i class="fa-solid fa-thumbs-up"></i></p>
+            </div>
+            <div class="box lose">
+                <p>Peccato...</p>
+                <p>HAI PERSO!</p>
+                <p><i class="fa-solid fa-thumbs-down"></i></p>
+            </div>
+            <div class="box draw">
+                <p>Beh...PARI!</p>
+                <p><i class="fa-regular fa-face-meh"></i></p>
+            </div>
+
         </div>
     </div>
-    <div class="container-game">
-        <h2>Lancia i dadi e prova a vincere</h2>
-        <p id="user-result">X</p>
-        <p id="computer-result">Y</p>
-        <button id="play">Gioca</button>
-        <div class="box win">Congratulazioni, HAI VINTO!</div>
-        <div class="box lose">Peccato, HAI PERSO!</div>
-        <div class="box draw">Beh...PARI!</div>
-
-    </div>
-</div>
     <script src="js/main.js"></script>
 </body>
 
